@@ -1,8 +1,16 @@
 {
   "name": "@cfn-modules/kms-key",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "AWS KMS key delegating access to IAM and allowing all AWS services to use the key",
   "author": "Michael Wittig <michael@widdix.de>",
   "license": "Apache-2.0",
-  "keywords": ["cfn-modules", "cfn-modules:ExposeArn", "cfn-modules:LambdaDependency"]
+  "keywords": ["cfn-modules", "cfn-modules:ExposeArn", "cfn-modules:LambdaDependency"],
+  "homepage": "https://github.com/cfn-modules",
+  "bugs": {
+    "url": "https://github.com/cfn-modules/kms-key/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/cfn-modules/kms-key.git"
+  }
 }
