@@ -20,9 +20,11 @@ npm i @cfn-modules/kms-key
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'cfn-modules example'
 Resources:
-  Function:
+  Key:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
+      Parameters:
+        AlertingModule: !GetAtt 'Alerting.Outputs.StackName' # optional
       TemplateURL: './node_modules/@cfn-modules/kms-key/module.yml'
 ```
 
@@ -38,4 +40,13 @@ Resources:
       <th>Allowed values</th>
     </tr>
   </thead>
+  <tbody>
+    <tr>
+      <td>AlertingModule</td>
+      <td>Stack name of <a href="https://www.npmjs.com/package/@cfn-modules/alerting">alerting module</a></td>
+      <td></td>
+      <td>no</td>
+      <td></td>
+    </tr>
+  </tbody>
 </table>

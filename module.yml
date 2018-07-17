@@ -15,7 +15,13 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'cfn-modules: AWS KMS key'
 # cfn-modules:implements(ExposeArn, LambdaDependency)
-# TODO generate alert if key is marked for deletion
+Parameters:
+  AlertingModule:
+    Description: 'Optional but recommended stack name of alerting module.'
+    Type: String
+    Default: ''
+Conditions:
+  HasAlertingModule: !Not [!Equals [!Ref AlertingModule, '']]
 Resources:
   Key:
     Type: 'AWS::KMS::Key'
@@ -43,11 +49,32 @@ Resources:
               'kms:CallerAccount': !Ref 'AWS::AccountId'
             StringLike:
               'kms:ViaService': !Sub '*.${AWS::Region}.amazonaws.com'
+  Rule:
+    Condition: HasAlertingModule
+    Type: 'AWS::Events::Rule'
+    Properties:
+      EventPattern:
+        source:
+        - 'aws.kms'
+        'detail-type':
+        - 'AWS API Call via CloudTrail'
+        resources:
+        - !GetAtt Key.Arn
+        detail:
+          eventSource:
+          - 'kms.amazonaws.com'
+          'eventName':
+          - ScheduleKeyDeletion
+          - DisableKey
+      State: ENABLED
+      Targets:
+      - Arn: {'Fn::ImportValue': !Sub '${AlertingModule}-Arn'}
+        Id: rule
 Outputs:
   ModuleId:
     Value: 'kms-key'
   ModuleVersion:
-    Value: '0.0.3'
+    Value: '0.0.4'
   StackName:
     Value: !Ref 'AWS::StackName'
   Arn:
