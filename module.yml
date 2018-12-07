@@ -24,6 +24,7 @@ Conditions:
   HasAlertingModule: !Not [!Equals [!Ref AlertingModule, '']]
 Resources:
   Key:
+    DeletionPolicy: Retain
     Type: 'AWS::KMS::Key'
     Properties:
       KeyPolicy:
