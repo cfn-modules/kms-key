@@ -5,6 +5,8 @@
 
 AWS KMS key delegating access to IAM and allowing all AWS services to use the key.
 
+> The KMS key is not deleted if you delete the CloudFormation stack to prevent unwanted data loss!
+
 ## Install
 
 > Install [Node.js and npm](https://nodejs.org/) first!
