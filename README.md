@@ -30,6 +30,14 @@ Resources:
       TemplateURL: './node_modules/@cfn-modules/kms-key/module.yml'
 ```
 
+## Examples
+
+* [serverless-iam](https://github.com/cfn-modules/docs/tree/master/examples/serverless-iam)
+
+## Related modules
+
+* [secret](https://github.com/cfn-modules/secret)
+
 ## Parameters
 
 <table>
