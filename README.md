@@ -32,7 +32,7 @@ Resources:
 
 ## Examples
 
-* [serverless-iam](https://github.com/cfn-modules/docs/tree/master/examples/serverless-iam)
+none
 
 ## Related modules
 
