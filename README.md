@@ -93,6 +93,12 @@ Resources:
       <td>no</td>
     </tr>
     <tr>
+      <td>StackName</td>
+      <td>global</td>
+      <td>Name of the stack (used to pass module references)</td>
+      <td>no</td>
+    </tr>
+    <tr>
       <td>Arn</td>
       <td>ExposeArn</td>
       <td>KMS key ARN</td>
