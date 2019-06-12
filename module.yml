@@ -20,9 +20,20 @@ Parameters:
     Description: 'Optional but recommended stack name of alerting module.'
     Type: String
     Default: ''
+  AliasName:
+    Description: 'Optional alias name (if not set, the stack name is used).'
+    Type: String
+    Default: ''
 Conditions:
   HasAlertingModule: !Not [!Equals [!Ref AlertingModule, '']]
+  HasAliasName: !Not [!Equals [!Ref AliasName, '']]
 Resources:
+  Alias:
+    DeletionPolicy: Retain
+    Type: 'AWS::KMS::Alias'
+    Properties:
+      AliasName: !If [HasAliasName, !Sub 'alias/${AliasName}', !Sub 'alias/${AWS::StackName}']
+      TargetKeyId: !Ref Key
   Key:
     DeletionPolicy: Retain
     Type: 'AWS::KMS::Key'
@@ -75,7 +86,7 @@ Outputs:
   ModuleId:
     Value: 'kms-key'
   ModuleVersion:
-    Value: '1.1.1'
+    Value: '1.2.0'
   StackName:
     Value: !Ref 'AWS::StackName'
   Arn:
