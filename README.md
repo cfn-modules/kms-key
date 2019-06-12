@@ -27,6 +27,7 @@ Resources:
     Properties:
       Parameters:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName' # optional
+        AliasName: '' # optional
       TemplateURL: './node_modules/@cfn-modules/kms-key/module.yml'
 ```
 
