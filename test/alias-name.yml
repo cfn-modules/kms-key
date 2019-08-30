@@ -1,10 +1,13 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'cfn-modules test'
+Parameters:
+  AliasName:
+    Type: String
 Resources:
   Key:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       Parameters:
-        AliasName: test
+        AliasName: !Ref AliasName
       TemplateURL: './node_modules/@cfn-modules/kms-key/module.yml'
