@@ -1,0 +1,17 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'cfn-modules test'
+Parameters:
+  IamAccess:
+    Type: String
+Resources:
+  User:
+    Type: 'AWS::IAM::User'
+    Properties: {}
+  Key:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      Parameters:
+        IamAccess: !Ref IamAccess
+        IamAdminAccess: !GetAtt 'User.Arn'
+      TemplateURL: './node_modules/@cfn-modules/kms-key/module.yml'

@@ -80,14 +80,14 @@ none
     </tr>
     <tr>
       <td>IamUseAccess</td>
-      <td>Comma-delimited list of IAM principals (e.g., IAM role ARN) allowed to use this CMK</td>
+      <td>Comma-delimited list of IAM principals (e.g., IAM Role or User ARN) allowed to use this CMK</td>
       <td></td>
       <td>no</td>
       <td></td>
     </tr>
     <tr>
       <td>IamAdminAccess</td>
-      <td>Comma-delimited list of IAM principals (e.g., IAM role ARN) allowed to administer this CMK</td>
+      <td>Comma-delimited list of IAM principals (e.g., IAM Role or User ARN) allowed to administer this CMK</td>
       <td></td>
       <td>no</td>
       <td></td>

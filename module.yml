@@ -30,11 +30,11 @@ Parameters:
     Default: Admin
     AllowedValues: [Read, Use, Admin]
   IamUseAccess:
-    Description: 'Optional comma-delimited list of IAM principals (e.g., IAM role ARN) allowed to use this CMK.'
+    Description: 'Optional comma-delimited list of IAM principals (e.g., IAM Role or User ARN) allowed to use this CMK.'
     Type: String
     Default: ''
   IamAdminAccess:
-    Description: 'Optional comma-delimited list of IAM principals (e.g., IAM role ARN) allowed to administer this CMK.'
+    Description: 'Optional comma-delimited list of IAM principals (e.g., IAM Role or User ARN) allowed to administer this CMK.'
     Type: String
     Default: ''
   ServiceAccess:
