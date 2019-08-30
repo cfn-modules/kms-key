@@ -4,14 +4,13 @@ Description: 'cfn-modules test'
 Parameters:
   IamAccess:
     Type: String
+  IamAdminAccess:
+    Type: String
 Resources:
-  User:
-    Type: 'AWS::IAM::User'
-    Properties: {}
   Key:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       Parameters:
         IamAccess: !Ref IamAccess
-        IamAdminAccess: !GetAtt 'User.Arn'
+        IamAdminAccess: !Ref IamAdminAccess
       TemplateURL: './node_modules/@cfn-modules/kms-key/module.yml'
