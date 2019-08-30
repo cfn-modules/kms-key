@@ -28,6 +28,11 @@ Resources:
       Parameters:
         AlertingModule: !GetAtt 'Alerting.Outputs.StackName' # optional
         AliasName: '' # optional
+        IamAccess: Admin # optional
+        IamUseAccess: '' # optional
+        IamAdminAccess: '' # optional
+        ServiceAccess: 'ALL_SERVICES' # optional
+        PublicServiceAccess: 'NO_SERVICES' # optional
       TemplateURL: './node_modules/@cfn-modules/kms-key/module.yml'
 ```
 
@@ -65,6 +70,41 @@ none
       <td></td>
       <td>no</td>
       <td></td>
+    </tr>
+    <tr>
+      <td>IamAccess</td>
+      <td>Level of access to the this CMK for all IAM entities from the same AWS account</td>
+      <td>Admin</td>
+      <td>no</td>
+      <td>[Read, Use, Admin]</td>
+    </tr>
+    <tr>
+      <td>IamUseAccess</td>
+      <td>Comma-delimited list of IAM principals (e.g., IAM role ARN) allowed to use this CMK</td>
+      <td></td>
+      <td>no</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>IamAdminAccess</td>
+      <td>Comma-delimited list of IAM principals (e.g., IAM role ARN) allowed to administer this CMK</td>
+      <td></td>
+      <td>no</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ServiceAccess</td>
+      <td>Which AWS service is allowed to use this CMK from the same AWS account and region?</td>
+      <td>ALL_SERVICES</td>
+      <td>no</td>
+      <td>[NO_SERVICES, ALL_SERVICES, connect, dms, ssm, ec2, elasticfilesystem, es, kinesis, kinesisvideo, lambda, lex, redshift, rds, secretsmanager, ses, s3, importexport, sqs, workmail, workspaces]</td>
+    </tr>
+    <tr>
+      <td>PublicServiceAccess</td>
+      <td>Which AWS service is allowed to use this CMK from the public?</td>
+      <td>NO_SERVICES</td>
+      <td>no</td>
+      <td>[NO_SERVICES, s3]</td>
     </tr>
   </tbody>
 </table>
