@@ -7,6 +7,8 @@ AWS KMS key delegating access to IAM and allowing all AWS services to use the ke
 
 > The KMS key is not deleted if you delete the CloudFormation stack to prevent unwanted data loss!
 
+If you look for a KMS key with stricter access check out the [kms-key-strict](https://github.com/cfn-modules/kms-key-strict) module.
+
 ## Install
 
 > Install [Node.js and npm](https://nodejs.org/) first!
@@ -37,6 +39,7 @@ none
 
 ## Related modules
 
+* [kms-key-strict](https://github.com/cfn-modules/kms-key-strict)
 * [secret](https://github.com/cfn-modules/secret)
 
 ## Parameters
