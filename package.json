@@ -1,6 +1,6 @@
 {
   "name": "@cfn-modules/kms-key",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "AWS KMS key delegating access to IAM and allowing all AWS services to use the key",
   "author": "Michael Wittig <michael@widdix.de>",
   "license": "Apache-2.0",
