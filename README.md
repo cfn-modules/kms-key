@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/cfn-modules/kms-key.svg?branch=master)](https://travis-ci.org/cfn-modules/kms-key)
-[![NPM version](https://img.shields.io/npm/v/@cfn-modules/kms-key.svg)](https://www.npmjs.com/package/@cfn-modules/kms-key)
-
 # cfn-modules: AWS KMS key
 
 AWS KMS key delegating access to IAM and allowing all AWS services to use the key.
